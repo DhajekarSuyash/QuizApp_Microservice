@@ -30,13 +30,13 @@ public class QuestionController {
 return new ResponseEntity<>(questionIdList, HttpStatus.OK);
     }
 
-    @GetMapping("/getQuestionByQuestionIds")
+    @PostMapping("/getQuestionByQuestionIds")
     public ResponseEntity<List<QuestionDto>> getQuestions(@RequestBody List<Integer> questionIds){
         List<QuestionDto> questionList = questionService.getListOfQuestionsByQuestionId(questionIds);
         return new ResponseEntity<>(questionList, HttpStatus.OK);
     }
 
-    @GetMapping("/result")
+    @PostMapping("/result")
     public ResponseEntity<Integer> getResult(@RequestBody List<QuizRequest> quizRequestList){
         int result = questionService.getResult(quizRequestList);
         return new ResponseEntity<>(result,HttpStatus.OK);
