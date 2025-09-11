@@ -29,10 +29,6 @@ public class QuizServiceImpl implements QuizService {
         Quiz quiz = new Quiz();
         quiz.setTitle(quizName);
 
-        //API - localhost:8081/questions/getQuestions  -> RESTTemplate
-        // By using feign client
-
-
         // q,o1,o2,o3,o4
         List<Integer> questionIdList = questionInterface.getQuestionsForQuiz(noOfQuestions, category).getBody();
 
@@ -48,6 +44,19 @@ public class QuizServiceImpl implements QuizService {
 
     @Override
     public List<QuestionDto> getQuizQuestions(int id) {
+
+        Quiz quiz = quizRepository.findById(id).get();
+        List<Integer> questionIdsList = quiz.getQuestionList();
+        List<QuestionDto> questionDtoList = questionInterface.getQuestions(questionIdsList).getBody();
+        return questionDtoList;
+
+        //quiz - quizId = 1
+        //question id list
+        // return ? QuestionDto List
+
+
+
+
 //        Quiz quiz = quizRepository.findById(id).get();
 //        List<Questions> questionList = quiz.getQuestionList();
 //        List<QuestionDto> questionDtoList = new ArrayList<>();
@@ -58,7 +67,6 @@ public class QuizServiceImpl implements QuizService {
 //
 //        }
 //        return questionDtoList;
-        return null;
 
     }
 

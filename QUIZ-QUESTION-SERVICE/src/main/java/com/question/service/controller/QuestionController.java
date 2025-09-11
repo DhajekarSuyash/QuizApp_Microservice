@@ -27,7 +27,7 @@ public class QuestionController {
     public ResponseEntity<List<Integer>> getQuestionsForQuiz(@RequestParam int noOfQ,
                                                              @RequestParam String category){
         List<Integer> questionIdList= questionService.getQuestionsForQuiz(noOfQ,category);
-return new ResponseEntity<>(questionIdList, HttpStatus.OK);
+    return new ResponseEntity<>(questionIdList, HttpStatus.OK);
     }
 
     @PostMapping("/getQuestionByQuestionIds")
