@@ -8,11 +8,11 @@
 		<version>3.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.question.service</groupId>
-	<artifactId>QUIZ-QUESTION-SERVICE</artifactId>
+	<groupId>com.quiz.service</groupId>
+	<artifactId>QUIZ-QUIZ-SERVICE</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>QUIZ-QUESTION-SERVICE</name>
-	<description>This is a question service for Quiz microservice application</description>
+	<name>QUIZ-QUIZ-SERVICE</name>
+	<description>Microservice for quiz </description>
 	<url/>
 	<licenses>
 		<license/>
@@ -43,10 +43,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-starter-openfeign</artifactId>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
